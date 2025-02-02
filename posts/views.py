@@ -5,15 +5,15 @@ from .forms import PostForm
 # Create your views here.
 
 def posts_list(request):
-    posts = Post.objects.filter(status="published")
+    # posts = Post.objects.filter(status="published")
+    # page_number = request.GET.get("page", 1)
+    # per_page = request.GET.get("per_page", 50)
+    # paginator = Paginator(posts, per_page)
 
-    page_number = request.GET.get("page", 1)
-    per_page = request.GET.get("per_page", 50)
-    paginator = Paginator(posts, per_page)
+    # page_obj = paginator.page(page_number)
 
-    page_obj = paginator.page(page_number)
-
-    return render(request, "posts/list.html", {"page_obj": page_obj})
+    return render(request, "posts/list.html")
+# , {"page_obj": page_obj}
 
 
 def post_details(request, post_id):
